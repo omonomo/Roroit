@@ -165,9 +165,6 @@ move_x_oblique="-48" # 移動量 (後の処理で * 100 にする)
 move_y_math="-25" # 通常
 move_y_s_math="-10" # 上付き、下付き
 
-# 括弧移動量
-move_y_bracket="74"
-
 # calt用
 move_y_calt_separate3="-510" # 3桁区切り表示のY座標
 move_y_calt_separate4="452" # 4桁区切り表示のY座標
@@ -333,8 +330,6 @@ if [ -n "${settings_txt}" ]; then
     if [ -n "${S}" ]; then move_y_math="${S#MOVE_Y_MATH=}"; fi
     S=$(grep -m 1 "^MOVE_Y_S_MATH=" "${settings_txt}") # 上付き、下付きの演算子縦移動量
     if [ -n "${S}" ]; then move_y_s_math="${S#MOVE_Y_S_MATH=}"; fi
-    S=$(grep -m 1 "^MOVE_Y_BRACKET=" "${settings_txt}") # 括弧の縦移動量
-    if [ -n "${S}" ]; then move_y_bracket="${S#MOVE_Y_BRACKET=}"; fi
 fi
 
 # Powerline の Y座標移動量
@@ -688,7 +683,7 @@ move_y_calt_bar=$(bc <<< "scale=0; ${move_y_calt_bar} * ${scale_height_hankaku} 
 move_y_calt_tilde=$((move_y_math + 57)) # ~ のY座標移動量
 move_y_calt_tilde=$(bc <<< "scale=0; ${move_y_calt_tilde} * ${scale_height_latin} / 100") # ~ のY座標移動量
 move_y_calt_tilde=$(bc <<< "scale=0; ${move_y_calt_tilde} * ${scale_height_hankaku} / 100") # ~ のY座標移動量
-move_y_calt_math=$((- move_y_math + move_y_bracket - 75)) # +-= のY座標移動量
+move_y_calt_math=$((- move_y_math - 1)) # +-= のY座標移動量
 move_y_calt_math=$(bc <<< "scale=0; ${move_y_calt_math} * ${scale_height_latin} / 100") # *+-= のY座標移動量
 move_y_calt_math=$(bc <<< "scale=0; ${move_y_calt_math} * ${scale_height_hankaku} / 100") # *+-= のY座標移動量
 
@@ -853,15 +848,6 @@ while (i < SizeOf(input_list))
     SelectMore(${address_store_mod} + ${num_mod_glyphs} * 4 + 1)
     SelectMore(${address_store_mod} + ${num_mod_glyphs} * 5 + 1)
 
-    SelectMore(0u0057) # W
-    SelectMore(0u0174) # Ŵ
-    SelectMore(0u1e80) # Ẁ
-    SelectMore(0u1e82) # Ẃ
-    SelectMore(0u1e84) # Ẅ
-    SelectMore(0u1e86) # Ẇ
-    SelectMore(0u1e88) # Ẉ
-    SelectMore(0u2c72) # Ⱳ
-
     SelectMore(0u0062) # b
     SelectMore(0u0180) # ƀ
     SelectMore(0u0183) # ƃ
@@ -1009,6 +995,31 @@ while (i < SizeOf(input_list))
             endif
         endloop
     endif
+    SetWidth(${width_latin})
+
+    Select(0u0057) # W
+    SelectMore(0u0174) # Ŵ
+    SelectMore(0u1e80) # Ẁ
+    SelectMore(0u1e82) # Ẃ
+    SelectMore(0u1e84) # Ẅ
+    SelectMore(0u1e86) # Ẇ
+    SelectMore(0u1e88) # Ẉ
+    SelectMore(0u2c72) # Ⱳ
+
+    if (input_list[i] == "${input_latin_regular}")
+        foreach
+            if (WorthOutputting())
+                Scale(101, 99.3, ${width_latin} / 2, 0)
+            endif
+        endloop
+    else
+        foreach
+            if (WorthOutputting())
+                Scale(96.5, 99.3, ${width_latin} / 2, 0)
+            endif
+        endloop
+    endif
+    SetWidth(${width_latin})
 
     Save("${tmpdir}/" + output_list2[i])
 
@@ -1439,9 +1450,25 @@ while (i < SizeOf(input_list))
     Move(0, -105)
     SetWidth(${width_latin})
 
+# , (右に移動)
+    Select(0u002c) # ,
+    if (input_list[i] == "${input_latin_regular}")
+        Move(32, 0)
+    else
+        Move(11, 0)
+    endif
+    SetWidth(${width_latin})
+
 # - (上げる)
     Select(0u002d) # -
     Move(0, 84)
+    SetWidth(${width_latin})
+
+# . (左に移動)
+    Select(0u002e) # .
+    if (input_list[i] == "${input_latin_regular}")
+        Move(-13, 0)
+    endif
     SetWidth(${width_latin})
 
 # / ※ 縮小してしまうため一旦消去してコピペ実施
@@ -1453,6 +1480,24 @@ while (i < SizeOf(input_list))
     SetWidth(${width_latin})
     Copy()
     Select(0u2215); Paste() # ∕
+    SetWidth(${width_latin})
+
+# : (左に移動)
+    Select(0u003a) # :
+    if (input_list[i] == "${input_latin_regular}")
+        Move(-39, 0)
+    else
+        Move(-7, 0)
+    endif
+    SetWidth(${width_latin})
+
+# ; (左に移動)
+    Select(0u003b) # ;
+    if (input_list[i] == "${input_latin_regular}")
+        Move(-34, 0)
+    else
+        Move(-27, 0)
+    endif
     SetWidth(${width_latin})
 
 # _ (上げる)
@@ -2138,7 +2183,7 @@ while (i < SizeOf(input_list))
     j = 0
     while (j < SizeOf(brkt))
         Select(brkt[j]);
-        Move(0, ${move_y_bracket})
+        Move(0, 74)
         SetWidth(${width_latin})
         j += 1
     endloop
@@ -3147,9 +3192,9 @@ while (i < \$argc)
           Move(256 - ${move_x_hankaku}, 0)
         endif
         if (j == 7 || j == 58 || j == 90) # （ ［ ｛ # 全角縦書き対応のため少し上げる(後で元に戻す)
-            Move(128 - ${move_x_hankaku}, 13 - ${move_y_bracket})
+            Move(128 - ${move_x_hankaku}, 0)
         elseif (j == 8 || j == 60 || j == 92) # ） ］ ｝
-            Move(-128 + ${move_x_hankaku}, 13 - ${move_y_bracket})
+            Move(-128 + ${move_x_hankaku}, 0)
  #        elseif (j == 11 || j == 13) # ， ．
  #            Move(-256 + ${move_x_hankaku}, 0)
         endif
@@ -3431,23 +3476,6 @@ while (i < \$argc)
  #        endif
  #        j += 1
  #    endloop
-
-# 全角括弧を少し下げる (元に戻す)
-    Select(0uff08, 0uff09) # （）
-    SelectMore(0uff3b) # ［
-    SelectMore(0uff3d) # ］
-    SelectMore(0uff5b) # ｛
-    SelectMore(0uff5d) # ｝
- #    SelectMore(0uff5f, 0uff60) # ｟｠
- #    SelectMore(0u3008, 0u3009) # 〈〉
- #    SelectMore(0u3010, 0u3011) # 【】
- #    SelectMore(0u300a, 0u300b) # 《》
- #    SelectMore(0u3014, 0u3015) # 〔〕
- #    SelectMore(0u3016, 0u3017) # 〖〗
- #    SelectMore(0u3018, 0u3019) # 〘〙
- #    SelectMore(0u301a, 0u301b) # 〚〛
-    Move(0, -13 + ${move_y_bracket})
-    SetWidth(${width_zenkaku})
 
 # 横書き全角形に下線追加
     j = 0 # ！ - ｠
@@ -3934,7 +3962,7 @@ while (i < \$argc)
     Select(0u003a); Copy() # :
     glyphName = GlyphInfo("Name")
     Select(k); Paste()
-    Move(-28, ${move_y_calt_colon})
+    Move(0, ${move_y_calt_colon})
     SetWidth(${width_hankaku})
  #    AddPosSub(lookupSub0, glyphName) # 移動前←後
     glyphName = GlyphInfo("Name")
@@ -5718,15 +5746,14 @@ while (i < \$argc)
     if ("${emoji_flag}" == "false")
         Print("Option: Reduce the number of emoji glyphs")
 
-        # Emoji
  #        Select(0u0023)             # #
  #        SelectMore(0u002a)         # *
  #        SelectMore(0u0030, 0u0039) # 0 - 9
-        Select(0u00a9)             # ©
-        SelectMore(0u00ae)         # ®
-        SelectMore(0u203c)         # ‼
+ #        SelectMore(0u00a9)         # ©
+ #        SelectMore(0u00ae)         # ®
+        Select(0u203c)             # ‼
         SelectMore(0u2049)         # ⁉
-        SelectMore(0u2122)         # ™
+ #        SelectMore(0u2122)         # ™
         SelectMore(0u2139)         # ℹ
         SelectMore(0u2194, 0u2199) # ↔↕↖↗↘↙
         SelectMore(0u21a9, 0u21aa) # ↩↪
