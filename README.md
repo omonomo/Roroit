@@ -4,7 +4,7 @@
 
 Roroit (ろろいと) はコーディングにもお使いいただける日本語等幅フォントです。  
 自作合成フォント [Cyroit](https://omonomo.github.io/Cyroit/) にプログラミングフォント [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono) と [Noto Sans Mono](https://fonts.google.com/noto/specimen/Noto+Sans+Mono) を合成した姉妹フォントになります。  
-某[コーディングフォントトーナメントサイト](https://www.codingfont.com)にて個人的優勝常連フォントである Roboto Mono に Noto Sans Mono をミックスし、調整しました。
+某[コーディングフォントトーナメント](https://www.codingfont.com)にて個人的優勝常連フォントである Roboto Mono に Noto Sans Mono をミックスし、調整しました。
 
 全角英数記号や半角カナ等にアンダーラインが引いてあるため、全角・半角の組み合わせになっている括弧や、誤って使われている全角チルダなどをすぐに見つけることができます。  
 また calt を利用したカーニング機能を実装しており、ラテン文字は等幅のまま前後の文字に合わせて文字間隔を調整します。
