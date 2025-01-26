@@ -56,12 +56,12 @@ Roroit (ろろいと) はコーディングにもお使いいただける日本�
 ## その他の特徴
 
 - 主にラテン文字、ギリシア文字、キリル文字のグリフは [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono) を使用しています。
-- Roboto Mono に無いアルファベットや記号のグリフは [Noto Sans Mono](https://fonts.google.com/noto/specimen/Noto+Sans+Mono) を使用しています。
+- 一部のアルファベットや記号、Roboto Mono に無いグリフは [Noto Sans Mono](https://fonts.google.com/noto/specimen/Noto+Sans+Mono) を使用しています。
 - 主に仮名文字のグリフは [Circle M+ 1m](https://itouhiro.github.io/mixfont-mplus-ipa/) を使用しています。
 - 主に漢字のグリフは [BIZ UDゴシック](https://github.com/googlefonts/morisawa-biz-ud-gothic) を使用しています。
 - 主に変体仮名のグリフは [NINJAL 変体仮名フォント](https://cid.ninjal.ac.jp/kana/font/) を使用しています。
 - [Nerd Fonts](https://www.nerdfonts.com) を追加しています。
-- [Cyroit](https://omonomo.github.io/Cyroit/) に Meslo を合成したため、[Inconsolata](https://levien.com/type/myfonts/inconsolata.html) 由来のグリフも含まれます。
+- [Cyroit](https://omonomo.github.io/Cyroit/) に Roboto Mono、Noto Sans Mono を合成したため、[Inconsolata](https://levien.com/type/myfonts/inconsolata.html) 由来のグリフも含まれます。
 - [ricty_generator](https://rictyfonts.github.io) を Fork したスクリプトで自動生成させています。
 - フォント生成時にグリフの改変や調整、追加を行っています。追加分も含め、全てのグリフは素材フォントの組み合わせだけで作られています。
 
@@ -70,7 +70,7 @@ Roroit (ろろいと) はコーディングにもお使いいただける日本�
 - Cyroit のグリフに合わせるため、全体的に縮小されています。
 - 上付き、下付き文字は少し拡大しています。
 - 一部の文字や記号について、グリフの形状や表示座標を微調整しています。
-- 半角以外の Noto Sans Mono のグリフは使用していません。
+- 半角幅以外の Noto Sans Mono のグリフは使用していません。
 - オブリーク体は新規に生成し直しています。
 
 ### 仮名文字について
@@ -126,13 +126,13 @@ Loose 版は名称が 「RoroitLoose...」 になります。
 
 | 名称      | サンプル                                                 | 説明                                                                                                                    |
 | --------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Roroit    | <img alt="Normal" src="./images/Normal.png" width="260"> | 通常版。スタイルセット対応。<br> 内容については後述。                                                                   |
-| Roroit EH | <img alt="Normal" src="./images/EH.png" width="260">     | 絵文字減らした版。スタイルセット対応。別の絵文字フォントとの併用推奨。<br>(サンプルの㊙は Apple Color Emoji のものです) |
-| Roroit BS | <img alt="BS" src="./images/BS.png" width="260">         | 基本版。<br> 全角スペースを可視化しています。                                                                           |
-| Roroit SP | <img alt="SP" src="./images/SP.png" width="260">         | スペシャルスペース版。<br> 半角スペース、ノーブレークスペースも可視化したバージョン。                                   |
-| Roroit DG | <img alt="DG" src="./images/DG.png" width="260">         | 桁区切り表示版。<br> たくさん並んだ数字とにらめっこする時間を短縮できます。                                             |
-| Roroit FX | <img alt="TS" src="./images/FX.png" width="260">         | 文字間隔固定版。calt と相性が悪いソフト用。<br> また他のバージョンよりも軽快に動作します。                              |
-| Roroit HB | <img alt="HB" src="./images/HB.png" width="260">         | 平凡版。全てのスペースが不可視でグリフ改変も抑えたバージョン。<br> プリントアウト用にどうぞ。                           |
+| Roroit    | <img alt="Normal" src="./images/Normal.png" width="268"> | 通常版。スタイルセット対応。<br> 内容については後述。                                                                   |
+| Roroit EH | <img alt="Normal" src="./images/EH.png" width="268">     | 絵文字減らした版。スタイルセット対応。別の絵文字フォントとの併用推奨。<br>(サンプルの㊙は Apple Color Emoji のものです) |
+| Roroit BS | <img alt="BS" src="./images/BS.png" width="268">         | 基本版。<br> 全角スペースを可視化しています。                                                                           |
+| Roroit SP | <img alt="SP" src="./images/SP.png" width="268">         | スペシャルスペース版。<br> 半角スペース、ノーブレークスペースも可視化したバージョン。                                   |
+| Roroit DG | <img alt="DG" src="./images/DG.png" width="268">         | 桁区切り表示版。<br> たくさん並んだ数字とにらめっこする時間を短縮できます。                                             |
+| Roroit FX | <img alt="TS" src="./images/FX.png" width="268">         | 文字間隔固定版。calt と相性が悪いソフト用。<br> また他のバージョンよりも軽快に動作します。                              |
+| Roroit HB | <img alt="HB" src="./images/HB.png" width="268">         | 平凡版。全てのスペースが不可視でグリフ改変も抑えたバージョン。<br> プリントアウト用にどうぞ。                           |
 
 ### 通常版、絵文字減らした版のスタイルセットについて
 
@@ -140,17 +140,17 @@ Loose 版は名称が 「RoroitLoose...」 になります。
 
 | タグ名 | サンプル                                             | 内容                                                                                      |
 | ------ | ---------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| ss01   | <img alt="ss01" src="./images/ss01.png" width="260"> | 全角スペース可視化                                                                        |
-| ss02   | <img alt="ss02" src="./images/ss02.png" width="260"> | 半角スペース可視化                                                                        |
-| ss03   | <img alt="ss03" src="./images/ss03.png" width="260"> | 3桁区切りマーク表示                                                                       |
-| ss04   | <img alt="ss04" src="./images/ss04.png" width="260"> | 4桁区切りマーク表示                                                                       |
-| ss05   | <img alt="ss05" src="./images/ss05.png" width="260"> | 小数小文字化                                                                              |
-| ss06   | <img alt="ss06" src="./images/ss06.png" width="260"> | 全角・半角形の下線、点字の外枠消去                                                        |
-| ss07   | <img alt="ss07" src="./images/ss07.png" width="260"> | 識別性向上グリフ無効                                                                      |
-| ss08   | <img alt="ss08" src="./images/ss08.png" width="260"> | DQVZ のグリフ変更                                                                         |
-| ss09   | <img alt="ss09" src="./images/ss09.png" width="260"> | JIS に含まれる罫線を全角化、矢印を細線化<br> (環境によって全角にならないことがあります)   |
-| ss10   | <img alt="ss10" src="./images/ss10.png" width="260"> | 0のスラッシュ消去                                                                         |
-| ss11   | <img alt="ss11" src="./images/ss11.png" width="260"> | ss01、ss02で表示される以外のスペース可視化<br> (環境によって可視化されないことがあります) |
+| ss01   | <img alt="ss01" src="./images/ss01.png" width="268"> | 全角スペース可視化                                                                        |
+| ss02   | <img alt="ss02" src="./images/ss02.png" width="268"> | 半角スペース可視化                                                                        |
+| ss03   | <img alt="ss03" src="./images/ss03.png" width="268"> | 3桁区切りマーク表示                                                                       |
+| ss04   | <img alt="ss04" src="./images/ss04.png" width="268"> | 4桁区切りマーク表示                                                                       |
+| ss05   | <img alt="ss05" src="./images/ss05.png" width="268"> | 小数小文字化                                                                              |
+| ss06   | <img alt="ss06" src="./images/ss06.png" width="268"> | 全角・半角形の下線、点字の外枠消去                                                        |
+| ss07   | <img alt="ss07" src="./images/ss07.png" width="268"> | 識別性向上グリフ無効                                                                      |
+| ss08   | <img alt="ss08" src="./images/ss08.png" width="268"> | DQVZ のグリフ変更                                                                         |
+| ss09   | <img alt="ss09" src="./images/ss09.png" width="268"> | JIS に含まれる罫線を全角化、矢印を細線化<br> (環境によって全角にならないことがあります)   |
+| ss10   | <img alt="ss10" src="./images/ss10.png" width="268"> | 0のスラッシュ消去                                                                         |
+| ss11   | <img alt="ss11" src="./images/ss11.png" width="268"> | ss01、ss02で表示される以外のスペース可視化<br> (環境によって可視化されないことがあります) |
 
 ## ライセンス
 
@@ -168,7 +168,7 @@ Roroit は以下の環境でビルドできることを確認しています。
 - OS: macOS Sequoia (version 15.2)
 - Shell: GNU bash, version 5.2.37(1)-release (aarch64-apple-darwin23.4.0)
 - FontForge: 20230101
-- FontTools: 4.55.4
+- FontTools: 4.55.5
 
 ### 基本的な使い方
 
@@ -345,4 +345,3 @@ calt テーブル (前後の文字によってグリフ置換を行う設定) �
 - [全角英数や半角カナが判別しやすい、文字間隔調整機能付き等幅フォント「Jeroit」](https://omonomo.github.io/Jeroit/): 三つ上のお姉さんフォントです。
 - [全角英数や半角カナが判別しやすい、文字間隔調整機能付き等幅フォント「Ubroit」](https://omonomo.github.io/Ubroit/): 二つ上のお姉さんフォントです。
 - [全角英数や半角カナが判別しやすい、文字間隔調整機能付き等幅フォント「Soroit」](https://omonomo.github.io/Soroit/): 一つ上のお姉さんフォントです。
-# Roroit
