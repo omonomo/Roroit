@@ -778,7 +778,22 @@ while (i < SizeOf(input_list))
     SelectMore(0u0406) # І
     SelectMore(0u0407) # Ї
 
-    SelectMore(0u004f) # O
+    if (input_list[i] == "${input_latin_regular}")
+        foreach
+            if (WorthOutputting())
+                Scale(98, 99.6, ${width_latin} / 2, 0)
+            endif
+        endloop
+    else
+        foreach
+            if (WorthOutputting())
+                Scale(96.5, 99.6, ${width_latin} / 2, 0)
+            endif
+        endloop
+    endif
+    SetWidth(${width_latin})
+
+    Select(0u004f) # O
     SelectMore(0u00d2) # Ò
     SelectMore(0u00d3) # Ó
     SelectMore(0u00d4) # Ô
@@ -848,7 +863,46 @@ while (i < SizeOf(input_list))
     SelectMore(${address_store_mod} + ${num_mod_glyphs} * 4 + 1)
     SelectMore(${address_store_mod} + ${num_mod_glyphs} * 5 + 1)
 
-    SelectMore(0u0062) # b
+    if (input_list[i] == "${input_latin_regular}")
+        foreach
+            if (WorthOutputting())
+                Scale(98, 99.3, ${width_latin} / 2, 0)
+            endif
+        endloop
+    else
+        foreach
+            if (WorthOutputting())
+                Scale(96.5, 99.3, ${width_latin} / 2, 0)
+            endif
+        endloop
+    endif
+    SetWidth(${width_latin})
+
+    Select(0u0057) # W
+    SelectMore(0u0174) # Ŵ
+    SelectMore(0u1e80) # Ẁ
+    SelectMore(0u1e82) # Ẃ
+    SelectMore(0u1e84) # Ẅ
+    SelectMore(0u1e86) # Ẇ
+    SelectMore(0u1e88) # Ẉ
+    SelectMore(0u2c72) # Ⱳ
+
+    if (input_list[i] == "${input_latin_regular}")
+        foreach
+            if (WorthOutputting())
+                Scale(101, 99.6, ${width_latin} / 2, 0)
+            endif
+        endloop
+    else
+        foreach
+            if (WorthOutputting())
+                Scale(96.5, 99.6, ${width_latin} / 2, 0)
+            endif
+        endloop
+    endif
+    SetWidth(${width_latin})
+
+    Select(0u0062) # b
     SelectMore(0u0180) # ƀ
     SelectMore(0u0183) # ƃ
     SelectMore(0u0253) # ɓ
@@ -888,7 +942,39 @@ while (i < SizeOf(input_list))
     SelectMore(0u1e21) # ḡ
     SelectMore(0ua7a1) # ꞡ
 
-    SelectMore(0u0069) # i
+    SelectMore(0u0070) # p
+    SelectMore(0u01a5) # ƥ
+    SelectMore(0u1d71) # ᵱ
+    SelectMore(0u1d7d) # ᵽ
+    SelectMore(0u1d88) # ᶈ
+    SelectMore(0u1e55) # ṕ
+    SelectMore(0u1e57) # ṗ
+    SelectMore(0ua751) # ꝑ
+    SelectMore(0ua753) # ꝓ
+    SelectMore(0ua755) # ꝕ
+
+    SelectMore(0u0071) # q
+    SelectMore(0u024b) # ɋ
+    SelectMore(0u02a0) # ʠ
+    SelectMore(0ua757) # ꝗ
+    SelectMore(0ua759) # ꝙ
+
+    if (input_list[i] == "${input_latin_regular}")
+        foreach
+            if (WorthOutputting())
+                Scale(98, 98.6, ${width_latin} / 2, 0)
+            endif
+        endloop
+    else
+        foreach
+            if (WorthOutputting())
+                Scale(96.5, 98.6, ${width_latin} / 2, 0)
+            endif
+        endloop
+    endif
+    SetWidth(${width_latin})
+
+    Select(0u0069) # i
     SelectMore(0u00ec) # ì
     SelectMore(0u00ed) # í
     SelectMore(0u00ee) # î
@@ -921,42 +1007,6 @@ while (i < SizeOf(input_list))
     # キリル文字
     SelectMore(0u0458) # ј
 
-    SelectMore(0u006c) # l
-    SelectMore(0u0142) # ł
-    SelectMore(0u013a) # ĺ
-    SelectMore(0u013c) # ļ
-    SelectMore(0u013e) # ľ
-    SelectMore(0u0140) # ŀ
-    SelectMore(0u019a) # ƚ
-    SelectMore(0u0234) # ȴ
-    SelectMore(0u026b, 0u026d) # ɫɬɭ
-    SelectMore(0u1d85) # ᶅ
-    SelectMore(0u1e37) # ḷ
-    SelectMore(0u1e39) # ḹ
-    SelectMore(0u1e3b) # ḻ
-    SelectMore(0u1e3d) # ḽ
-    SelectMore(0u2c61) # ⱡ
-    SelectMore(0ua749) # ꝉ
-    SelectMore(0ua78e) # ꞎ
-    SelectMore(0uab37, 0uab39) # ꬷꬸꬹ
-
-    SelectMore(0u0070) # p
-    SelectMore(0u01a5) # ƥ
-    SelectMore(0u1d71) # ᵱ
-    SelectMore(0u1d7d) # ᵽ
-    SelectMore(0u1d88) # ᶈ
-    SelectMore(0u1e55) # ṕ
-    SelectMore(0u1e57) # ṗ
-    SelectMore(0ua751) # ꝑ
-    SelectMore(0ua753) # ꝓ
-    SelectMore(0ua755) # ꝕ
-
-    SelectMore(0u0071) # q
-    SelectMore(0u024b) # ɋ
-    SelectMore(0u02a0) # ʠ
-    SelectMore(0ua757) # ꝗ
-    SelectMore(0ua759) # ꝙ
-
     SelectMore(0u0079) # y
     SelectMore(0u00fd) # ý
     SelectMore(0u00ff) # ÿ
@@ -985,37 +1035,47 @@ while (i < SizeOf(input_list))
     if (input_list[i] == "${input_latin_regular}")
         foreach
             if (WorthOutputting())
-                Scale(98, 99.3, ${width_latin} / 2, 0)
+                Scale(98, 98.5, ${width_latin} / 2, 0)
             endif
         endloop
     else
         foreach
             if (WorthOutputting())
-                Scale(96.5, 99.3, ${width_latin} / 2, 0)
+                Scale(96.5, 98.5, ${width_latin} / 2, 0)
             endif
         endloop
     endif
     SetWidth(${width_latin})
 
-    Select(0u0057) # W
-    SelectMore(0u0174) # Ŵ
-    SelectMore(0u1e80) # Ẁ
-    SelectMore(0u1e82) # Ẃ
-    SelectMore(0u1e84) # Ẅ
-    SelectMore(0u1e86) # Ẇ
-    SelectMore(0u1e88) # Ẉ
-    SelectMore(0u2c72) # Ⱳ
+    Select(0u006c) # l
+    SelectMore(0u0142) # ł
+    SelectMore(0u013a) # ĺ
+    SelectMore(0u013c) # ļ
+    SelectMore(0u013e) # ľ
+    SelectMore(0u0140) # ŀ
+    SelectMore(0u019a) # ƚ
+    SelectMore(0u0234) # ȴ
+    SelectMore(0u026b, 0u026d) # ɫɬɭ
+    SelectMore(0u1d85) # ᶅ
+    SelectMore(0u1e37) # ḷ
+    SelectMore(0u1e39) # ḹ
+    SelectMore(0u1e3b) # ḻ
+    SelectMore(0u1e3d) # ḽ
+    SelectMore(0u2c61) # ⱡ
+    SelectMore(0ua749) # ꝉ
+    SelectMore(0ua78e) # ꞎ
+    SelectMore(0uab37, 0uab39) # ꬷꬸꬹ
 
     if (input_list[i] == "${input_latin_regular}")
         foreach
             if (WorthOutputting())
-                Scale(101, 99.3, ${width_latin} / 2, 0)
+                Scale(98, 98.6, ${width_latin} / 2, 0)
             endif
         endloop
     else
         foreach
             if (WorthOutputting())
-                Scale(96.5, 99.3, ${width_latin} / 2, 0)
+                Scale(96.5, 98.6, ${width_latin} / 2, 0)
             endif
         endloop
     endif
@@ -1508,7 +1568,7 @@ while (i < SizeOf(input_list))
 # \`´ (拡大する)
     Select(0u0060) # \`
     SelectMore(0u00b4) # ´
-    Scale(120, 120,  ${width_latin} / 2, 730)
+    Scale(120, 120, ${width_latin} / 2, 730)
     SetWidth(${width_latin})
 
 # Δ (ベースフォントを置き換え) ※ 縮小してしまうため一旦消去してコピペ実施
