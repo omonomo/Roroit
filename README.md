@@ -4,7 +4,7 @@
 
 Roroit (ろろいと) はコーディングにもお使いいただける日本語等幅フォントです。  
 自作合成フォント [Cyroit](https://omonomo.github.io/Cyroit/) にプログラミングフォント [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono) と [Noto Sans Mono](https://fonts.google.com/noto/specimen/Noto+Sans+Mono) を合成した姉妹フォントになります。  
-某[コーディングフォントトーナメント](https://www.codingfont.com)にて個人的優勝常連フォントである Roboto Mono に Noto Sans Mono をミックスし、調整しました。
+某[コーディングフォントトーナメントサイト](https://www.codingfont.com)にて個人的優勝常連フォントである Roboto Mono に Noto Sans Mono をミックスし、調整しました。
 
 全角英数記号や半角カナ等にアンダーラインが引いてあるため、全角・半角の組み合わせになっている括弧や、誤って使われている全角チルダなどをすぐに見つけることができます。  
 また calt を利用したカーニング機能を実装しており、ラテン文字は等幅のまま前後の文字に合わせて文字間隔を調整します。
@@ -41,13 +41,13 @@ Roroit (ろろいと) はコーディングにもお使いいただける日本�
 
 ## ダウンロード
 
-最新版 v1.0.1 (2025-01-28)
+最新版 v1.0.2 (2025-02-03)
 
 | リンク                                                                                                      | 説明                                   |
 | ----------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-| [フォント (Roroit)](https://github.com/omonomo/Roroit/releases/download/v1.0.1/Roroit_v1.0.1.zip)           | 通常版。半角幅が全角の1/2。            |
-| [フォント (RoroitLoose)](https://github.com/omonomo/Roroit/releases/download/v1.0.1/RoroitLoose_v1.0.1.zip) | 文字間隔ゆるい版。半角幅が全角の9/16。 |
-| [ソースコード](https://github.com/omonomo/Roroit/archive/refs/tags/v1.0.1.zip)                              | 使用方法は下の方にあります。           |
+| [フォント (Roroit)](https://github.com/omonomo/Roroit/releases/download/v1.0.2/Roroit_v1.0.2.zip)           | 通常版。半角幅が全角の1/2。            |
+| [フォント (RoroitLoose)](https://github.com/omonomo/Roroit/releases/download/v1.0.2/RoroitLoose_v1.0.2.zip) | 文字間隔ゆるい版。半角幅が全角の9/16。 |
+| [ソースコード](https://github.com/omonomo/Roroit/archive/refs/tags/v1.0.2.zip)                              | 使用方法は下の方にあります。           |
 
 フォントやスクリプトの使用は自己責任にてお願いいたします。  
 各ファイルを使用することで生じた不具合・損害等について omonomo は責任を負いません。  
@@ -165,10 +165,10 @@ Loose 版は名称が 「RoroitLoose...」 になります。
 
 Roroit は以下の環境でビルドできることを確認しています。
 
-- OS: macOS Sequoia (version 15.2)
+- OS: macOS Sequoia (version 15.3)
 - Shell: GNU bash, version 5.2.37(1)-release (aarch64-apple-darwin23.4.0)
 - FontForge: 20230101
-- FontTools: 4.55.6
+- FontTools: 4.55.8
 
 ### 基本的な使い方
 
@@ -191,7 +191,7 @@ Cyroit の生成スクリプトと使い方は同じです。
 
 一連の処理を自動化します。全スクリプトの中のリーダーです。  
 `-F` オプションを付けずに生成したフォントは、表示確認用の未完成品になります。  
-パラメータとして引数に font_generator のオプション (`hVxfNn` 以外) をハイフン無しで羅列することにより、生成フォントをカスタマイズすることができます。
+パラメータとして引数に font_generator のオプション (`hVxXfNn` 以外) をハイフン無しで羅列することにより、生成フォントをカスタマイズすることができます。
 
 (例) 接尾語に「NoNF」を付けて、Nerd Fonts 抜きの基本版 (完成品) を生成する場合
 
@@ -240,6 +240,7 @@ FontForge のスクリプト機能を利用してフォントの合成とグリ�
   `-h` ヘルプを表示します。  
   `-V` 生成するフォントのバージョンナンバーを表示します。`settings.txt` の内容を参照します。  
   `-x` スクリプトと同じフォルダにある一時作成フォルダとファイルの削除のみ行って終了します。  
+  `-X` スクリプトと同じフォルダにある一時作成フォルダ、ファイルと保存してある機能削除前のフォントの削除のみ行って終了します。  
   `-f /path/to/fontforge` _/path/to/fontforge_ に存在する FontForge を使用します。  
   `-v` 合成時の経過を詳しく表示します。  
   `-l` 一時作成ファイルを残したままにします。  
