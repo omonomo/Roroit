@@ -1518,6 +1518,20 @@ while (i < SizeOf(input_list))
     RemoveOverlap()
     Select(65552);  Clear() # Temporary glyph
 
+# j (右に少し移動)
+    # ラテン文字
+    Select(0u006a) # j
+    SelectMore(0u0135) # ĵ
+    SelectMore(0u01f0) # ǰ
+    SelectMore(0u0249) # ɉ
+    SelectMore(0u029d) # ʝ
+    # ギリシア文字
+    SelectMore(0u03f3) # ϳ
+    # キリル文字
+    SelectMore(0u0458) # ј
+    Move(20, 0)
+    SetWidth(${width_latin})
+
 # Ǝ (ベースフォントを置き換え)
     Select(0u0045); Copy() # E
     Select(0u018e); Paste() # Ǝ
@@ -1802,7 +1816,7 @@ while (i < SizeOf(input_list))
     else
         Scale(150)
     endif
-    Copy() 
+    Copy()
     Select(${address_store_visi_latin}); Paste() # 保管所
     SetWidth(${width_latin})
 
