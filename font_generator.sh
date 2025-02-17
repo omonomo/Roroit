@@ -2494,8 +2494,13 @@ while (i < SizeOf(input_list))
     Select(0u2013, 0u2015); Clear() # –—―
     Select(0u2025, 0u2026); Clear() # ‥…
     Select(0u2030, 0u2031); Clear() # ‰‱
+    Select(0u2042); Clear() # ⁂
+    Select(0u2051); Clear() # ⁑
     Select(0u210a); Clear() # ℊ
+    Select(0u2121); Clear() # ℡
+    Select(0u213b); Clear() # ℻
     Select(0u2150, 0u215f); Clear() # ⅐-⅟
+    Select(0u2183, 0u2184); Clear() # Ↄↄ
     Select(0u2189); Clear() # ↉
     Select(0u2190, 0u2199); Clear() # ←-↙
     Select(0u21a4, 0u21a8); Clear() # ↤-↨
