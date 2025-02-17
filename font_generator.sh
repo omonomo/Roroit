@@ -1445,6 +1445,26 @@ while (i < SizeOf(input_list))
     Print("Move box drawing and block")
     Select(0u2500, 0u259f)
     Move(5, ${move_y_em_revise} - 68)
+    SetWidth(${width_latin})
+
+    Print("Edit numbers")
+# 2 3 4 6 9 (右に少し移動)
+    Select(0u0032) # 2
+    SelectMore(0u0033) # 3
+    Move(20, 0)
+    Select(0u0034) # 4
+    SelectMore(0u0036) # 6
+    Move(10, 0)
+    Select(0u0039) # 9
+    Move(5, 0)
+    SetWidth(${width_latin})
+
+# 5 8 (左に少し移動)
+    Select(0u0035) # 5
+    Move(-15, 0)
+    Select(0u0038) # 8
+    Move(-10, 0)
+    SetWidth(${width_latin})
 
     Print("Edit alphabets")
 # D (ss 用、クロスバーを付加することで少しくどい感じに)
@@ -6132,8 +6152,8 @@ if [ "${patch_only_flag}" = "false" ]; then
 
     # 下書きモード以外で font_generator に変更が無く、すでにパッチ前フォントが作成されていた場合それを呼び出す
     if [ "${draft_flag}" = "false" ]; then
-        output_data=$(echo $(wc -c font_generator.sh) | cut -d ' ' -f 1)"-"$(date -r font_generator.sh "+%Y%m%d-%H%M%S")
-        output_data=${output_data}"_"$(echo $(wc -c "${settings}.txt") | cut -d ' ' -f 1)"-"$(date -r "${settings}.txt" "+%Y%m%d-%H%M%S")
+        output_data=$(sha256sum font_generator.sh | cut -d ' ' -f 1)
+        output_data=${output_data}"_"$(sha256sum font_generator.sh | cut -d ' ' -f 1)
         if [ "${nerd_flag}" = "false" ]; then
             nopatchsetdir_name="e"
         fi
