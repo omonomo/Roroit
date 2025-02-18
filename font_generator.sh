@@ -738,6 +738,30 @@ while (i < SizeOf(input_list))
     Print("Open " + input_list2[i])
     Open(input_list2[i])
 
+# 幅が0のグリフを半角幅に変更
+    SelectWorthOutputting()
+    foreach
+        if (GlyphInfo("Width") == 0)
+            Move(${width_latin} / 2 ,0)
+            SetWidth(${width_latin})
+        endif
+    endloop
+
+    Select(0u0337, 0u0338)
+    Move(${width_latin} / 2 ,0)
+    SetWidth(${width_latin})
+
+# combining grapheme joiner を消去
+    Select(0u034f); Clear() # combining grapheme joiner
+
+# 幅が広いグリフクリア
+    SelectWorthOutputting()
+    foreach
+        if (700 <= GlyphInfo("Width"))
+            Clear(); DetachAndRemoveGlyphs()
+        endif
+    endloop
+
     SelectWorthOutputting()
     UnlinkReference()
     ScaleToEm(${em_ascent1024}, ${em_descent1024})
@@ -1398,15 +1422,7 @@ while (i < SizeOf(input_list))
 # 使用しないグリフクリア
     Print("Remove not used glyphs")
     Select(0, 31); Clear(); DetachAndRemoveGlyphs()
-    Select(65536, 66183); Clear(); DetachAndRemoveGlyphs()
-
-# 幅が0か広いグリフクリア
-    SelectWorthOutputting()
-    foreach
-        if (GlyphInfo("Width") == 0 || 700 <= GlyphInfo("Width"))
-            Clear(); DetachAndRemoveGlyphs()
-        endif
-    endloop
+    Select(65536, 66178); Clear(); DetachAndRemoveGlyphs()
 
 # Clear kerns, position, substitutions
     Print("Clear kerns, position, substitutions")
@@ -1440,6 +1456,24 @@ while (i < SizeOf(input_list))
     endif
 
 # --------------------------------------------------
+
+# 合成可能なダイアクリティカルマークを移動
+    Select(0u0300) # gravecomb
+    SelectMore(0u0301) # acutecomb
+    SelectMore(0u0303) # tildecomb
+    SelectMore(0u0309) # hook
+    SelectMore(0u030f) # uni030f
+    SelectMore(0u0323) # dotbelow
+    Move(${width_latin} , 0)
+    SetWidth(${width_latin})
+
+    Select(0u0329) # uni0329
+    SelectMore(0u0335) # uni0335
+    SelectMore(0u0348) # uni0348
+    SelectMore(0u035d) # uni035d
+    SelectMore(0u035f) # uni035f
+    Move(${width_latin} / 2, 0)
+    SetWidth(${width_latin})
 
 # 罫線、ブロックを少し移動
     Print("Move box drawing and block")
