@@ -41,13 +41,13 @@ Roroit (ろろいと) はコーディングにもお使いいただける日本�
 
 ## ダウンロード
 
-最新版 v1.0.2 (2025-02-03)
+最新版 v1.0.3 (2025-02-19)
 
 | リンク                                                                                                      | 説明                                   |
 | ----------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-| [フォント (Roroit)](https://github.com/omonomo/Roroit/releases/download/v1.0.2/Roroit_v1.0.2.zip)           | 通常版。半角幅が全角の1/2。            |
-| [フォント (RoroitLoose)](https://github.com/omonomo/Roroit/releases/download/v1.0.2/RoroitLoose_v1.0.2.zip) | 文字間隔ゆるい版。半角幅が全角の9/16。 |
-| [ソースコード](https://github.com/omonomo/Roroit/archive/refs/tags/v1.0.2.zip)                              | 使用方法は下の方にあります。           |
+| [フォント (Roroit)](https://github.com/omonomo/Roroit/releases/download/v1.0.3/Roroit_v1.0.3.zip)           | 通常版。半角幅が全角の1/2。            |
+| [フォント (RoroitLoose)](https://github.com/omonomo/Roroit/releases/download/v1.0.3/RoroitLoose_v1.0.3.zip) | 文字間隔ゆるい版。半角幅が全角の9/16。 |
+| [ソースコード](https://github.com/omonomo/Roroit/archive/refs/tags/v1.0.3.zip)                              | 使用方法は下の方にあります。           |
 
 フォントやスクリプトの使用は自己責任にてお願いいたします。  
 各ファイルを使用することで生じた不具合・損害等について omonomo は責任を負いません。  
@@ -70,7 +70,7 @@ Roroit (ろろいと) はコーディングにもお使いいただける日本�
 - Cyroit のグリフに合わせるため、全体的に縮小されています。
 - 上付き、下付き文字は少し拡大しています。
 - 一部の文字や記号について、グリフの形状や表示座標を微調整しています。
-- 半角幅以外の Noto Sans Mono のグリフは使用していません。
+- 半角より幅が広い Noto Sans Mono のグリフは使用していません。
 - オブリーク体は新規に生成し直しています。
 
 ### 仮名文字について
@@ -165,10 +165,10 @@ Loose 版は名称が 「RoroitLoose...」 になります。
 
 Roroit は以下の環境でビルドできることを確認しています。
 
-- OS: macOS Sequoia (version 15.3)
+- OS: macOS Sequoia (version 15.3.1)
 - Shell: GNU bash, version 5.2.37(1)-release (aarch64-apple-darwin23.4.0)
 - FontForge: 20230101
-- FontTools: 4.55.8
+- FontTools: 4.56.0
 
 ### 基本的な使い方
 
