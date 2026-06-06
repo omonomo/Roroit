@@ -4,7 +4,7 @@ Copyright (c) 2025 omonomo ([https://omonomo.github.io/Roroit/](https://omonomo.
 
 ## 簡単な説明
 
-自作合成フォント [Cyroit](https://omonomo.github.io/Cyroit/) に [Roboto Mono](https://github.com/googlefonts/robotomono) と [Noto Sans Mono](https://github.com/notofonts/latin-greek-cyrillic) を合成しました。
+自作合成フォント [Cyroit](https://omonomo.github.io/Cyroit/) に [Roboto Mono](https://github.com/googlefonts/robotomono) と [Noto Sans Mono](https://github.com/notofonts/NotoSansMono) を合成しました。
 
 ## 収録フォントの主な違い
 
@@ -58,8 +58,8 @@ Copyright 2015 The Roboto Mono Project Authors
 
 [Noto Sans Mono (Version 2.014)]  
 Copyright 2022 The Noto Project Authors  
-([https://github.com/notofonts/latin-greek-cyrillic](https://github.com/notofonts/latin-greek-cyrillic))  
-主に Roboto Mono のグリフの置き換えで使用しています。Noto Sans Mono のライセンスは [SIL Open Font License v1.1](https://github.com/notofonts/latin-greek-cyrillic/blob/main/OFL.txt) です。
+([https://github.com/notofonts/NotoSansMono](https://github.com/notofonts/NotoSansMono))  
+主に Roboto Mono のグリフの置き換えで使用しています。Noto Sans Mono のライセンスは [SIL Open Font License v1.1](https://github.com/notofonts/NotoSansMono/blob/main/LICENSE) です。
 
 [Inconsolata (Version 3.001)]  
 Copyright 2006 The Inconsolata Project Authors  
