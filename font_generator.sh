@@ -863,6 +863,11 @@ while (i < SizeOf(input_list))
 # combining grapheme joiner を消去
     Select(0u034f); Clear() # combining grapheme joiner
 
+# 空白グリフ防止
+    Select(0u1f4a, 0u1f4d) # Ὂ-Ὅ
+    Move(-505, 0)
+    SetWidth(530)
+
 # 幅が広いグリフクリア
     SelectWorthOutputting()
     foreach
